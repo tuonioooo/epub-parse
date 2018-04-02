@@ -1,11 +1,11 @@
 # EpubParser
 
-EpubParser is a java library for parsing epub files.
+EpubParser是一个用于解析ePUB文件的Java库.
 
-EpubParser lets you read the epub content page by page. It aims to reduce memory consumption. It is useful for large epub files.
+EpubParser允许您逐页阅读ePUB内容。它的目的是减少内存消耗。它对于大型的ePUB文件很有用.
 
 # Usage
-Usage is fairly simple. Just instantiate a reader object, input the epub file path, set the optional values and start parsing the file by <i>readSection</i> method.
+使用相当简单。只需实例化读取器对象，输入ePUB文件路径，设置可选值，并开始通过<i>readSection</i>方法解析文件.
 
 Example usage:
 
@@ -18,11 +18,11 @@ Example usage:
 	String sectionContent = bookSection.getSectionContent(); // Returns content as html.
 	String sectionTextContent = bookSection.getSectionTextContent(); // Excludes html tags.
 
-To save the page and parsing progress:
+若要保存页面和解析进度，请执行以下操作:
 
 	reader.saveProgress();
 	
-And to check and load it afterwards:
+然后再检查和装载:
 	
 	if (reader.isSavedProgressFound()) { // Available after calling setFullContent method.
 		int lastSavedPage = reader.loadProgress();
@@ -35,11 +35,11 @@ Check out my latest app written by using this library. <a href="https://play.goo
 
 # Setup
 
-Add dependency in your project build.gradle
+Gradle在项目构建中添加依赖项。
 
 	compile 'com.github.mertakdut:EpubParser:1.0.95'
 
-Or grab it via maven
+或者 maven构建它
 
 	<dependency>
     		<groupId>com.github.mertakdut</groupId>
@@ -47,5 +47,3 @@ Or grab it via maven
     		<version>1.0.95</version>
 	</dependency>
 
-# License
-See the <a href="https://github.com/mertakdut/EpubParser/blob/master/LICENSE.txt">LICENSE</a> file for license rights and limitations (Apache License 2.0).
